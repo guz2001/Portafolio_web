@@ -181,9 +181,193 @@
       <!-- ─── FIN HERO ─── -->
 
 
-      <!-- ─── SECCIONES FUTURAS (placeholders por ahora) ─── -->
-      <section id="about"     style="min-height:10vh;"></section>
-      <section id="skills"    style="min-height:10vh;"></section>
+      <!-- ─────────────────────────────────────────────────
+        👨‍💻 ABOUT SECTION — Sobre mí
+      ────────────────────────────────────────────────── -->
+      <section class="section about" id="about" aria-label="Sobre mí">
+        <div class="container">
+
+          <div class="section-header">
+            <span class="section-label">// sobre_mi.java</span>
+            <h2 class="section-title">Sobre Mí</h2>
+          </div>
+
+          <div class="about__grid">
+
+            <!-- ── Foto de perfil ── -->
+            <div class="about__photo-wrap">
+              <div class="about__photo-glow" aria-hidden="true"></div>
+              <div class="about__photo-frame">
+                <img
+                  src="assets/images/profile.png"
+                  alt="Juan David Guzmán — Ingeniero de Sistemas"
+                  class="about__photo"
+                  loading="lazy"
+                />
+              </div>
+              <!-- Badge de disponibilidad -->
+              <div class="about__available" role="status" aria-label="Disponible para trabajar">
+                <span class="about__available-dot" aria-hidden="true"></span>
+                Disponible
+              </div>
+            </div>
+
+            <!-- ── Texto y stats ── -->
+            <div class="about__content">
+
+              <p class="about__text">
+                Hola, soy <strong>Juan David Guzmán</strong>, Ingeniero de Sistemas
+                con enfoque en el desarrollo <span class="highlight">Fullstack</span>.
+                Me apasiona construir aplicaciones robustas y eficientes,
+                desde el <strong>backend</strong> hasta la interfaz de usuario.
+              </p>
+
+              <p class="about__text">
+                Mi camino en tecnología empezó con
+                <span class="highlight">Java</span> y sistemas Linux, y
+                cada día avanzo hacia el dominio completo del stack de desarrollo.
+                Creo en el código limpio, la arquitectura sólida y el
+                aprendizaje continuo.
+              </p>
+
+              <!-- Estadísticas -->
+              <div class="about__stats" aria-label="Estadísticas">
+                <div class="about__stat">
+                  <span class="about__stat-number">01</span>
+                  <span class="about__stat-label">Año de estudio</span>
+                </div>
+                <div class="about__stat">
+                  <span class="about__stat-number">+5</span>
+                  <span class="about__stat-label">Proyectos</span>
+                </div>
+                <div class="about__stat">
+                  <span class="about__stat-number">3</span>
+                  <span class="about__stat-label">Tecnologías</span>
+                </div>
+              </div>
+
+              <!-- Tags de habilidades clave -->
+              <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+                <span class="badge">☕ Java</span>
+                <span class="badge">🌐 JavaScript</span>
+                <span class="badge">🐧 Linux</span>
+                <span class="badge">💻 Bash</span>
+                <span class="badge">🔧 Git</span>
+                <span class="badge">🗄️ SQL</span>
+              </div>
+
+            </div>
+          </div><!-- /about__grid -->
+
+        </div>
+      </section>
+      <!-- ─── FIN ABOUT ─── -->
+
+
+      <!-- ─────────────────────────────────────────────────
+        🛠️ SKILLS SECTION — Habilidades
+      ────────────────────────────────────────────────── -->
+      <section class="section skills" id="skills" aria-label="Habilidades">
+        <div class="container">
+
+          <div class="section-header">
+            <span class="section-label">// skills.config</span>
+            <h2 class="section-title">Habilidades</h2>
+            <p class="section-subtitle">
+              Tecnologías y herramientas con las que construyo soluciones
+            </p>
+          </div>
+
+          <div class="skills__categories">
+
+            <!-- ── Backend ── -->
+            <div>
+              <h3 class="skills__category-title">
+                <span class="skills__category-icon" aria-hidden="true">⚙️</span>
+                Backend
+              </h3>
+              <div class="skills__grid">
+                <div class="skill-card">
+                  <span class="skill-card__icon">☕</span>
+                  <span class="skill-card__name">Java</span>
+                  <span class="skill-card__level">Principal</span>
+                </div>
+                <div class="skill-card">
+                  <span class="skill-card__icon">🗄️</span>
+                  <span class="skill-card__name">SQL</span>
+                  <span class="skill-card__level">Intermedio</span>
+                </div>
+                <div class="skill-card">
+                  <span class="skill-card__icon">🔌</span>
+                  <span class="skill-card__name">REST APIs</span>
+                  <span class="skill-card__level">En aprendizaje</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Frontend ── -->
+            <div>
+              <h3 class="skills__category-title">
+                <span class="skills__category-icon" aria-hidden="true">🌐</span>
+                Frontend
+              </h3>
+              <div class="skills__grid">
+                <div class="skill-card">
+                  <span class="skill-card__icon">🌐</span>
+                  <span class="skill-card__name">HTML</span>
+                  <span class="skill-card__level">Intermedio</span>
+                </div>
+                <div class="skill-card">
+                  <span class="skill-card__icon">🎨</span>
+                  <span class="skill-card__name">CSS</span>
+                  <span class="skill-card__level">Intermedio</span>
+                </div>
+                <div class="skill-card">
+                  <span class="skill-card__icon">📜</span>
+                  <span class="skill-card__name">JavaScript</span>
+                  <span class="skill-card__level">Básico</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── DevTools ── -->
+            <div>
+              <h3 class="skills__category-title">
+                <span class="skills__category-icon" aria-hidden="true">🔧</span>
+                DevTools &amp; Sistema
+              </h3>
+              <div class="skills__grid">
+                <div class="skill-card">
+                  <span class="skill-card__icon">🐧</span>
+                  <span class="skill-card__name">Linux</span>
+                  <span class="skill-card__level">Avanzado</span>
+                </div>
+                <div class="skill-card">
+                  <span class="skill-card__icon">💻</span>
+                  <span class="skill-card__name">Bash</span>
+                  <span class="skill-card__level">Intermedio</span>
+                </div>
+                <div class="skill-card">
+                  <span class="skill-card__icon">🔧</span>
+                  <span class="skill-card__name">Git</span>
+                  <span class="skill-card__level">Intermedio</span>
+                </div>
+                <div class="skill-card">
+                  <span class="skill-card__icon">🐙</span>
+                  <span class="skill-card__name">GitHub</span>
+                  <span class="skill-card__level">Intermedio</span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /skills__categories -->
+
+        </div>
+      </section>
+      <!-- ─── FIN SKILLS ─── -->
+
+
+      <!-- Secciones siguientes (se construyen en fases 4–6) -->
       <section id="projects"  style="min-height:10vh;"></section>
       <section id="education" style="min-height:10vh;"></section>
       <section id="contact"   style="min-height:10vh;"></section>
