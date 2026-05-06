@@ -1,0 +1,153 @@
+/*
+ * ============================================================
+ *  VARIABLES.CSS — Portafolio Juan David Guzmán
+ *  Design Tokens: colores, tipografía, espaciado, efectos
+ *  Sistema: Futurista Minimalista — Modo Oscuro
+ * ============================================================
+ *
+ *  ¿Qué son las CSS Custom Properties (variables)?
+ *  Se declaran con --nombre y se usan con var(--nombre).
+ *  Al declararse en :root están disponibles en TODA la página.
+ */
+
+:root {
+
+  /* ==========================================
+   * 🎨 COLORES — Paleta Futurista
+   * ========================================== */
+
+  /* Fondos */
+  --color-bg:          #080808;   /* Negro profundo — fondo principal */
+  --color-surface:     #111111;   /* Gris muy oscuro — tarjetas */
+  --color-surface-2:   #1A1A1A;   /* Gris oscuro — superficies secundarias */
+  --color-surface-3:   #222222;   /* Gris medio-oscuro — hover de tarjetas */
+
+  /* Bordes */
+  --color-border:      #2A2A2A;           /* Borde estándar */
+  --color-border-cyan: rgba(0, 255, 212, 0.25); /* Borde con glow cyan */
+
+  /* Acento — Cyan Futurista */
+  --color-cyan:        #00FFD4;           /* Cyan vibrante — acento principal */
+  --color-cyan-dim:    #00CCAA;           /* Cyan más suave */
+  --color-cyan-dark:   #007A65;           /* Cyan muy oscuro */
+  --color-cyan-glow:   rgba(0, 255, 212, 0.12); /* Glow de fondo */
+  --color-cyan-glow-strong: rgba(0, 255, 212, 0.25); /* Glow más intenso */
+
+  /* Texto */
+  --color-text-primary:   #F2F2F2;  /* Blanco suave — texto principal */
+  --color-text-secondary: #888888;  /* Gris medio — texto secundario */
+  --color-text-muted:     #444444;  /* Gris oscuro — texto terciario */
+  --color-text-cyan:      #00FFD4;  /* Texto de acento */
+
+  /* Estados */
+  --color-success:  #22c55e;
+  --color-warning:  #f59e0b;
+  --color-error:    #ef4444;
+
+
+  /* ==========================================
+   * 🔤 TIPOGRAFÍA
+   * ========================================== */
+
+  /* Familias de fuente */
+  --font-heading: 'Space Grotesk', 'Inter', sans-serif;  /* Títulos — futurista */
+  --font-body:    'Inter', system-ui, sans-serif;         /* Cuerpo de texto */
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace; /* Código, labels */
+
+  /* Tamaños de fuente — Escala tipográfica */
+  --text-xs:   1.2rem;   /* 12px */
+  --text-sm:   1.4rem;   /* 14px */
+  --text-base: 1.6rem;   /* 16px — base */
+  --text-lg:   1.8rem;   /* 18px */
+  --text-xl:   2.0rem;   /* 20px */
+  --text-2xl:  2.4rem;   /* 24px */
+  --text-3xl:  3.0rem;   /* 30px */
+  --text-4xl:  3.6rem;   /* 36px */
+  --text-5xl:  4.8rem;   /* 48px */
+  --text-6xl:  6.0rem;   /* 60px */
+  --text-7xl:  7.2rem;   /* 72px */
+
+  /* Pesos de fuente */
+  --font-regular:    400;
+  --font-medium:     500;
+  --font-semibold:   600;
+  --font-bold:       700;
+  --font-extrabold:  800;
+
+  /* Altura de línea */
+  --leading-tight:  1.1;
+  --leading-snug:   1.3;
+  --leading-normal: 1.6;
+  --leading-loose:  1.8;
+
+  /* Espaciado entre letras */
+  --tracking-tight:  -0.03em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.1em;
+  --tracking-widest:  0.2em;
+
+
+  /* ==========================================
+   * 📏 ESPACIADO — Sistema 8px
+   * ========================================== */
+
+  --space-1:  0.4rem;   /*  4px */
+  --space-2:  0.8rem;   /*  8px */
+  --space-3:  1.6rem;   /* 16px */
+  --space-4:  2.4rem;   /* 24px */
+  --space-5:  3.2rem;   /* 32px */
+  --space-6:  4.8rem;   /* 48px */
+  --space-7:  6.4rem;   /* 64px */
+  --space-8:  9.6rem;   /* 96px */
+  --space-9: 12.8rem;   /* 128px */
+
+
+  /* ==========================================
+   * 🔲 BORDES Y RADIOS
+   * ========================================== */
+
+  --radius-sm:   0.4rem;      /*  4px — badges, chips */
+  --radius-md:   0.8rem;      /*  8px — tarjetas, inputs */
+  --radius-lg:   1.6rem;      /* 16px — secciones grandes */
+  --radius-xl:   2.4rem;      /* 24px — hero card */
+  --radius-pill: 9999px;      /* Botones pill */
+
+
+  /* ==========================================
+   * 💡 SOMBRAS Y GLOWS
+   * ========================================== */
+
+  --shadow-sm:       0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md:       0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-lg:       0 8px 32px rgba(0, 0, 0, 0.7);
+
+  /* Glow cyan — el efecto futurista principal */
+  --glow-cyan-sm:    0 0 10px rgba(0, 255, 212, 0.3);
+  --glow-cyan-md:    0 0 20px rgba(0, 255, 212, 0.4),
+                     0 0 40px rgba(0, 255, 212, 0.15);
+  --glow-cyan-lg:    0 0 30px rgba(0, 255, 212, 0.5),
+                     0 0 60px rgba(0, 255, 212, 0.2);
+
+  /* Glow en texto */
+  --text-glow-cyan:  0 0 20px rgba(0, 255, 212, 0.6);
+
+
+  /* ==========================================
+   * ⚡ TRANSICIONES Y ANIMACIONES
+   * ========================================== */
+
+  --transition-fast:   150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow:   500ms ease;
+  --transition-bounce: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+
+  /* ==========================================
+   * 📐 LAYOUT
+   * ========================================== */
+
+  --max-width:        1200px;  /* Ancho máximo del contenido */
+  --navbar-height:    7rem;    /* Altura de la barra de navegación */
+  --section-padding:  10rem;   /* Padding vertical de secciones */
+}

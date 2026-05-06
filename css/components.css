@@ -1,0 +1,241 @@
+/*
+ * ============================================================
+ *  COMPONENTS.CSS — Portafolio Juan David Guzmán
+ *  Componentes reutilizables: Navbar, cursor, línea de escaneo
+ * ============================================================
+ */
+
+
+/* ==========================================
+ * 🔵 CURSOR PERSONALIZADO
+ * ========================================== */
+* { cursor: none; }
+
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+/* Punto central */
+.cursor__dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color-cyan);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform var(--transition-fast),
+              opacity var(--transition-fast);
+  box-shadow: var(--glow-cyan-sm);
+}
+
+/* Anillo exterior */
+.cursor__ring {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0, 255, 212, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease,
+              width 0.2s ease,
+              height 0.2s ease,
+              border-color 0.2s ease;
+}
+
+/* Estado hover — el anillo se expande */
+.cursor.is-hovering .cursor__ring {
+  width: 56px;
+  height: 56px;
+  border-color: var(--color-cyan);
+}
+
+.cursor.is-hovering .cursor__dot {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+
+/* ==========================================
+ * 🧭 NAVBAR
+ * ========================================== */
+.navbar {
+  position: fixed;                  /* Fija en la parte superior */
+  top: 0; left: 0; right: 0;
+  height: var(--navbar-height);
+  z-index: 100;
+  transition: background var(--transition-normal),
+              border-color var(--transition-normal),
+              backdrop-filter var(--transition-normal);
+
+  /* Por defecto: transparente */
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+/* Navbar con scroll — fondo oscuro + blur */
+.navbar.scrolled {
+  background: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: var(--color-border);
+}
+
+/* Línea de acento cyan en la parte inferior del navbar al hacer scroll */
+.navbar.scrolled::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-cyan),
+    transparent
+  );
+  opacity: 0.4;
+}
+
+/* Contenedor interno del navbar */
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* ─── Logo / Nombre ─── */
+.navbar__logo {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  letter-spacing: var(--tracking-wide);
+  transition: color var(--transition-fast);
+}
+
+.navbar__logo span {
+  color: var(--color-cyan);
+}
+
+.navbar__logo:hover {
+  color: var(--color-cyan);
+}
+
+/* ─── Menú de navegación ─── */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  list-style: none;
+}
+
+/* Links del menú */
+.navbar__link {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+/* Numeración de links estilo futurista */
+.navbar__link::before {
+  content: attr(data-num);
+  color: var(--color-cyan);
+  margin-right: 0.4rem;
+  font-size: var(--text-xs);
+}
+
+/* Línea inferior animada */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-cyan);
+  transition: width var(--transition-normal);
+}
+
+.navbar__link:hover {
+  color: var(--color-text-primary);
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* ─── Botón CV ─── */
+.navbar__cta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-cyan);
+  border: 1px solid var(--color-border-cyan);
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: var(--tracking-wide);
+  transition: all var(--transition-normal);
+}
+
+.navbar__cta:hover {
+  background: var(--color-cyan-glow);
+  box-shadow: var(--glow-cyan-sm);
+  transform: translateY(-1px);
+}
+
+/* ─── Hamburger — Mobile ─── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: var(--space-2);
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--color-text-primary);
+  transition: all var(--transition-normal);
+}
+
+/* ─── Responsive: menú móvil ─── */
+@media (max-width: 768px) {
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar__menu {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0; right: 0;
+    background: rgba(8, 8, 8, 0.97);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    gap: var(--space-5);
+    padding: var(--space-6) var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-normal),
+                opacity var(--transition-normal);
+  }
+
+  .navbar__menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navbar__cta {
+    margin-top: var(--space-3);
+  }
+}

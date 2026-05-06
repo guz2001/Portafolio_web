@@ -1,0 +1,102 @@
+/*
+ * ============================================================
+ *  RESET.CSS — Portafolio Juan David Guzmán
+ *  Normalización cross-browser
+ *  Basado en: Modern CSS Reset by Andy Bell
+ * ============================================================
+ */
+
+/* 1. Box-sizing global: padding y border se incluyen dentro del ancho */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Elimina márgenes y paddings por defecto */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Mejora la renderización de fuentes y comportamiento del html/body */
+html {
+  /* Scroll suave para toda la página */
+  scroll-behavior: smooth;
+  /* Evita que el texto se agrande en iOS al rotar */
+  -webkit-text-size-adjust: 100%;
+  /* Tamaño base: 1rem = 10px (fácil de calcular) */
+  font-size: 62.5%;
+}
+
+body {
+  /* Altura mínima de toda la ventana */
+  min-height: 100vh;
+  /* Mejora el renderizado de texto */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Evita overflow horizontal */
+  overflow-x: hidden;
+}
+
+/* 4. Elementos multimedia responsivos por defecto */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Los inputs heredan la fuente del padre (no usan fuente del navegador) */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Evita que el texto largo desborde su contenedor */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Elimina estilos de lista cuando se usa dentro de roles de navegación */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* 8. Links sin subrayado por defecto (se estiliza en components.css) */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 9. Botones sin estilos por defecto del navegador */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* 10. Evita que las animaciones se reproduzcan si el usuario prefiere movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

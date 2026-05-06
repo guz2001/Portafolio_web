@@ -1,0 +1,260 @@
+/*
+ * ============================================================
+ *  SECTIONS.CSS — Portafolio Juan David Guzmán
+ *  Estilos por sección: Hero, About, Skills, Projects, etc.
+ * ============================================================
+ */
+
+
+/* ==========================================
+ * 🦸 HERO SECTION
+ * ========================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  /* Padding superior para no quedar debajo del navbar */
+  padding-top: var(--navbar-height);
+}
+
+/* ─── Fondo: manchas de luz (ambient glow) ─── */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Mancha grande — cyan difusa arriba a la derecha */
+.hero__bg-glow-1 {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 700px;
+  max-height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 212, 0.06) 0%,
+    transparent 70%
+  );
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+
+/* Mancha pequeña — cyan abajo a la izquierda */
+.hero__bg-glow-2 {
+  position: absolute;
+  bottom: 5%;
+  left: -10%;
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 212, 0.04) 0%,
+    transparent 70%
+  );
+  animation: glow-pulse 8s ease-in-out infinite reverse;
+}
+
+/* Grid de líneas decorativas — efecto futurista */
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.6; transform: scale(1.05); }
+}
+
+
+/* ─── Contenido del Hero ─── */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 80rem;
+}
+
+/* Saludo monoespaciado */
+.hero__greeting {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-cyan);
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-4);
+  opacity: 0;
+  animation: fade-up 0.8s ease 0.2s forwards;
+}
+
+/* Punto parpadeante antes del saludo */
+.hero__greeting::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--color-cyan);
+  border-radius: 50%;
+  box-shadow: var(--glow-cyan-sm);
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* Nombre principal */
+.hero__name {
+  font-family: var(--font-heading);
+  font-size: clamp(4.8rem, 8vw, 9.6rem); /* Fluido: mínimo 48px, máximo 96px */
+  font-weight: var(--font-extrabold);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  background: linear-gradient(
+    135deg,
+    var(--color-text-primary) 40%,
+    var(--color-cyan) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-3);
+  opacity: 0;
+  animation: fade-up 0.8s ease 0.4s forwards;
+}
+
+/* Título con efecto typing */
+.hero__title {
+  font-family: var(--font-mono);
+  font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
+  color: var(--color-text-secondary);
+  font-weight: var(--font-regular);
+  margin-bottom: var(--space-5);
+  min-height: 3.2rem;
+  opacity: 0;
+  animation: fade-up 0.8s ease 0.6s forwards;
+}
+
+/* Cursor parpadeante del typing */
+.hero__title .typing-cursor {
+  display: inline-block;
+  color: var(--color-cyan);
+  animation: blink 0.7s step-end infinite;
+  margin-left: 2px;
+}
+
+/* Descripción */
+.hero__description {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 55ch;
+  line-height: var(--leading-loose);
+  margin-bottom: var(--space-6);
+  opacity: 0;
+  animation: fade-up 0.8s ease 0.8s forwards;
+}
+
+/* Contenedor de botones CTA */
+.hero__actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: var(--space-8);
+  opacity: 0;
+  animation: fade-up 0.8s ease 1.0s forwards;
+}
+
+/* Stack de tecnologías debajo de los botones */
+.hero__stack {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fade-up 0.8s ease 1.2s forwards;
+}
+
+.hero__stack-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-widest);
+  white-space: nowrap;
+}
+
+/* Línea separadora en el stack */
+.hero__stack-divider {
+  width: 3rem;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ─── Scroll indicator ─── */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-5);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  opacity: 0;
+  animation: fade-in 1s ease 2s forwards;
+}
+
+.hero__scroll-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-widest);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Línea animada que baja */
+.hero__scroll-line {
+  width: 1px;
+  height: 6rem;
+  background: linear-gradient(to bottom, var(--color-cyan), transparent);
+  animation: scroll-line 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll-line {
+  0%   { transform: scaleY(0); transform-origin: top;    opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top;    opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+}
+
+
+/* ─── Animaciones de entrada ─── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

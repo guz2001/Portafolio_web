@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- =====================================================
+      META TAGS
+    ====================================================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portafolio profesional de Juan David Guzmán — Ingeniero de Sistemas y Desarrollador Fullstack. Proyectos, habilidades y contacto." />
+    <meta name="author" content="Juan David Guzmán" />
+    <meta name="keywords" content="desarrollador fullstack, ingeniero de sistemas, Java, JavaScript, portafolio, Colombia" />
+
+    <!-- Open Graph — Para cuando compartas el link en redes sociales -->
+    <meta property="og:title" content="Juan David Guzmán — Desarrollador Fullstack" />
+    <meta property="og:description" content="Portafolio profesional de Juan David Guzmán — Ingeniero de Sistemas y Desarrollador Fullstack." />
+    <meta property="og:type" content="website" />
+
+    <title>Juan David Guzmán — Desarrollador Fullstack</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+
+    <!-- =====================================================
+      CSS — Orden de carga:
+      1. reset.css      → elimina estilos del navegador
+      2. variables.css  → tokens de diseño (colores, fuentes…)
+      3. base.css       → estilos base con los tokens
+      4. components.css → navbar, cursor, botones reutilizables
+      5. sections.css   → estilos de cada sección
+    ====================================================== -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+  </head>
+
+  <body>
+
+    <!-- =====================================================
+      🔵 CURSOR PERSONALIZADO
+      Estos dos divs son el punto y el anillo del cursor
+      que JS moverá con el mouse
+    ====================================================== -->
+    <div class="cursor" id="cursor">
+      <div class="cursor__dot"></div>
+      <div class="cursor__ring"></div>
+    </div>
+
+
+    <!-- =====================================================
+      🧭 NAVBAR — Barra de navegación fija
+    ====================================================== -->
+    <header class="navbar" id="navbar" role="banner">
+      <nav class="container navbar__inner" aria-label="Navegación principal">
+
+        <!-- Logo / Nombre -->
+        <a href="#hero" class="navbar__logo" aria-label="Ir al inicio">
+          JD<span>.</span>Guzmán
+        </a>
+
+        <!-- Botón hamburger — solo visible en móvil -->
+        <button
+          class="navbar__hamburger"
+          id="hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Menú de links -->
+        <ul class="navbar__menu" id="nav-menu" role="list">
+          <li>
+            <a href="#about"    class="navbar__link" data-num="01.">Sobre mí</a>
+          </li>
+          <li>
+            <a href="#skills"   class="navbar__link" data-num="02.">Skills</a>
+          </li>
+          <li>
+            <a href="#projects" class="navbar__link" data-num="03.">Proyectos</a>
+          </li>
+          <li>
+            <a href="#education" class="navbar__link" data-num="04.">Estudios</a>
+          </li>
+          <li>
+            <a href="#contact"  class="navbar__link" data-num="05.">Contacto</a>
+          </li>
+          <li>
+            <!-- Botón para descargar CV — añadiremos el PDF más adelante -->
+            <a href="#" class="navbar__cta" id="btn-cv" aria-label="Descargar CV">
+              [ CV ]
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+    </header>
+
+
+    <!-- =====================================================
+      CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main>
+
+      <!-- ─────────────────────────────────────────────────
+        🦸 HERO SECTION
+        La primera pantalla que el visitante ve
+      ────────────────────────────────────────────────── -->
+      <section class="hero" id="hero" aria-label="Presentación">
+
+        <!-- Elementos decorativos del fondo -->
+        <div class="hero__bg" aria-hidden="true">
+          <div class="hero__bg-glow-1"></div>
+          <div class="hero__bg-glow-2"></div>
+          <div class="hero__grid"></div>
+        </div>
+
+        <!-- Contenido principal del hero -->
+        <div class="container">
+          <div class="hero__content">
+
+            <!-- Saludo tipo código -->
+            <p class="hero__greeting">
+              Hola, mundo — disponible para trabajar
+            </p>
+
+            <!-- Nombre con gradiente blanco → cyan -->
+            <h1 class="hero__name">
+              Juan David<br />Guzmán
+            </h1>
+
+            <!-- Título con efecto de escritura (typing) -->
+            <p class="hero__title">
+              <span class="hero__typing-text" id="typing-text"></span>
+              <span class="typing-cursor" aria-hidden="true">|</span>
+            </p>
+
+            <!-- Descripción breve -->
+            <p class="hero__description">
+              Ingeniero de Sistemas con pasión por construir soluciones
+              robustas y eficientes. Enfocado en el desarrollo Fullstack
+              con Java en el backend y tecnologías web modernas.
+            </p>
+
+            <!-- Botones de acción -->
+            <div class="hero__actions">
+              <a href="#projects" class="btn btn-primary" id="btn-ver-proyectos">
+                Ver proyectos
+              </a>
+              <a href="#contact" class="btn btn-outline" id="btn-contactar">
+                Contactar
+              </a>
+            </div>
+
+            <!-- Stack tecnológico -->
+            <div class="hero__stack">
+              <span class="hero__stack-label">Tech stack</span>
+              <div class="hero__stack-divider" aria-hidden="true"></div>
+              <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                <span class="badge">Java</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">Bash</span>
+                <span class="badge">Linux</span>
+                <span class="badge">Git</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="hero__scroll" aria-hidden="true">
+          <span class="hero__scroll-text">scroll</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+
+      </section>
+      <!-- ─── FIN HERO ─── -->
+
+
+      <!-- ─── SECCIONES FUTURAS (placeholders por ahora) ─── -->
+      <section id="about"     style="min-height:10vh;"></section>
+      <section id="skills"    style="min-height:10vh;"></section>
+      <section id="projects"  style="min-height:10vh;"></section>
+      <section id="education" style="min-height:10vh;"></section>
+      <section id="contact"   style="min-height:10vh;"></section>
+
+    </main>
+
+
+    <!-- =====================================================
+      FOOTER — Fase 6
+    ====================================================== -->
+    <footer id="footer">
+      <!-- Lo construimos en Fase 6 -->
+    </footer>
+
+
+    <!-- =====================================================
+      JS — Cargamos al final del body para no bloquear el HTML
+    ====================================================== -->
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
