@@ -367,8 +367,66 @@
       <!-- ─── FIN SKILLS ─── -->
 
 
-      <!-- Secciones siguientes (se construyen en fases 4–6) -->
-      <section id="projects"  style="min-height:10vh;"></section>
+      <!-- ─────────────────────────────────────────────────
+        🚀 PROJECTS SECTION — Proyectos
+      ────────────────────────────────────────────────── -->
+      <section class="section projects" id="projects" aria-label="Proyectos">
+        <div class="container">
+
+          <div class="section-header">
+            <span class="section-label">// projects.list</span>
+            <h2 class="section-title">Proyectos</h2>
+            <p class="section-subtitle">
+              Cosas que he construido y problemas que he resuelto
+            </p>
+          </div>
+
+          <!-- Botones de filtro — generados por render.js al cargar -->
+          <div class="projects__filters" role="tablist" aria-label="Filtrar proyectos">
+            <button
+              class="projects__filter-btn active"
+              data-filter="all"
+              role="tab"
+              aria-selected="true"
+              id="filter-all"
+            >Todos</button>
+            <button
+              class="projects__filter-btn"
+              data-filter="backend"
+              role="tab"
+              aria-selected="false"
+              id="filter-backend"
+            >Backend</button>
+            <button
+              class="projects__filter-btn"
+              data-filter="web"
+              role="tab"
+              aria-selected="false"
+              id="filter-web"
+            >Web</button>
+            <button
+              class="projects__filter-btn"
+              data-filter="tools"
+              role="tab"
+              aria-selected="false"
+              id="filter-tools"
+            >Tools</button>
+          </div>
+
+          <!-- Grid de tarjetas — renderizado dinámicamente por render.js -->
+          <div
+            class="projects__grid"
+            id="projects-grid"
+            role="list"
+            aria-label="Lista de proyectos"
+          ></div>
+
+        </div>
+      </section>
+      <!-- ─── FIN PROJECTS ─── -->
+
+
+      <!-- Secciones siguientes (se construyen en fases 5–6) -->
       <section id="education" style="min-height:10vh;"></section>
       <section id="contact"   style="min-height:10vh;"></section>
 
@@ -384,8 +442,13 @@
 
 
     <!-- =====================================================
-      JS — Cargamos al final del body para no bloquear el HTML
+      JS — Orden de carga importante:
+      1. data.js   → define los datos (PROJECTS, etc.)
+      2. render.js → lee los datos y renderiza el HTML
+      3. main.js   → animaciones, cursor, navbar
     ====================================================== -->
+    <script src="js/data.js"></script>
+    <script src="js/render.js"></script>
     <script src="js/main.js"></script>
 
   </body>
