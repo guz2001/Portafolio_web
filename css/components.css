@@ -9,14 +9,18 @@
 /* ==========================================
  * 🔵 CURSOR PERSONALIZADO
  * ========================================== */
-* { cursor: none; }
+* {
+  cursor: none;
+}
 
 .cursor {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: difference;
+
 }
 
 /* Punto central */
@@ -28,7 +32,7 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: transform var(--transition-fast),
-              opacity var(--transition-fast);
+    opacity var(--transition-fast);
   box-shadow: var(--glow-cyan-sm);
 }
 
@@ -41,9 +45,9 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: transform 0.12s ease,
-              width 0.2s ease,
-              height 0.2s ease,
-              border-color 0.2s ease;
+    width 0.2s ease,
+    height 0.2s ease,
+    border-color 0.2s ease;
 }
 
 /* Estado hover — el anillo se expande */
@@ -62,13 +66,16 @@
  * 🧭 NAVBAR
  * ========================================== */
 .navbar {
-  position: fixed;                  /* Fija en la parte superior */
-  top: 0; left: 0; right: 0;
+  position: fixed;
+  /* Fija en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
   height: var(--navbar-height);
   z-index: 100;
   transition: background var(--transition-normal),
-              border-color var(--transition-normal),
-              backdrop-filter var(--transition-normal);
+    border-color var(--transition-normal),
+    backdrop-filter var(--transition-normal);
 
   /* Por defecto: transparente */
   background: transparent;
@@ -87,15 +94,14 @@
 .navbar.scrolled::after {
   content: '';
   position: absolute;
-  bottom: -1px; left: 0;
+  bottom: -1px;
+  left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-cyan),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      var(--color-cyan),
+      transparent);
   opacity: 0.4;
 }
 
@@ -104,7 +110,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Logo a la izquierda, menú a la derecha */
   height: 100%;
+  width: 100%;
 }
 
 /* ─── Logo / Nombre ─── */
@@ -129,8 +137,21 @@
 .navbar__menu {
   display: flex;
   align-items: center;
-  gap: var(--space-6);
+  /* gap único y uniforme para TODOS los items del menú */
+  gap: 3.2rem;
   list-style: none;
+}
+
+/* Cada item es solo un contenedor neutro */
+.navbar__menu>li {
+  display: flex;
+  align-items: center;
+}
+
+/* El botón CV se separa visualmente con una línea vertical */
+.navbar__menu>li:last-child {
+  border-left: 1px solid var(--color-border);
+  padding-left: 3.2rem;
 }
 
 /* Links del menú */
@@ -155,7 +176,8 @@
 .navbar__link::after {
   content: '';
   position: absolute;
-  bottom: -4px; left: 0;
+  bottom: -4px;
+  left: 0;
   width: 0;
   height: 1px;
   background: var(--color-cyan);
@@ -215,18 +237,32 @@
   .navbar__menu {
     position: fixed;
     top: var(--navbar-height);
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     background: rgba(8, 8, 8, 0.97);
     backdrop-filter: blur(16px);
     flex-direction: column;
-    gap: var(--space-5);
+    gap: var(--space-4);
+    /* gap vertical en móvil */
     padding: var(--space-6) var(--space-5);
     border-bottom: 1px solid var(--color-border);
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: transform var(--transition-normal),
-                opacity var(--transition-normal);
+      opacity var(--transition-normal);
+  }
+
+  /* En móvil cada item ocupa todo el ancho */
+  .navbar__menu>li {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* El último item (CV) sin borde ni padding extra en móvil */
+  .navbar__menu>li:last-child {
+    border-left: none;
+    padding-left: 0;
   }
 
   .navbar__menu.open {
