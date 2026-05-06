@@ -397,18 +397,211 @@
     <!-- ─── FIN PROJECTS ─── -->
 
 
-    <!-- Secciones siguientes (se construyen en fases 5–6) -->
-    <section id="education" style="min-height:10vh;"></section>
-    <section id="contact" style="min-height:10vh;"></section>
+    <!-- ─────────────────────────────────────────────────
+        🎓 EDUCATION SECTION — Estudios y Certificaciones
+      ────────────────────────────────────────────────── -->
+    <section class="section education" id="education" aria-label="Estudios y Certificaciones">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">// education.log</span>
+          <h2 class="section-title">Estudios</h2>
+          <p class="section-subtitle">
+            Mi formación académica y certificaciones obtenidas
+          </p>
+        </div>
+
+        <div class="timeline" role="list">
+
+          <!-- ── Carrera universitaria ── -->
+          <div class="timeline-item current" role="listitem">
+            <span class="timeline-item__date">2022 — Presente</span>
+            <div class="timeline-item__card">
+              <p class="timeline-item__type">🎓 Universidad</p>
+              <h3 class="timeline-item__title">Ingeniería de Sistemas</h3>
+              <p class="timeline-item__subtitle">Universidad — Colombia</p>
+              <p class="timeline-item__description">
+                Carrera enfocada en fundamentos de programación, algoritmos,
+                bases de datos, redes y desarrollo de software. Énfasis en
+                construcción de soluciones tecnológicas robustas.
+              </p>
+              <span class="timeline-item__badge">
+                <span aria-hidden="true">●</span> En curso
+              </span>
+            </div>
+          </div>
+
+          <!-- ── Certificación 1 ── -->
+          <div class="timeline-item" role="listitem">
+            <span class="timeline-item__date">2024</span>
+            <div class="timeline-item__card">
+              <p class="timeline-item__type">📜 Certificación</p>
+              <h3 class="timeline-item__title">Java — Programación Orientada a Objetos</h3>
+              <p class="timeline-item__subtitle">Curso online</p>
+              <p class="timeline-item__description">
+                Fundamentos de POO en Java: clases, herencia, polimorfismo,
+                interfaces y manejo de excepciones.
+              </p>
+            </div>
+          </div>
+
+          <!-- ── Certificación 2 ── -->
+          <div class="timeline-item" role="listitem">
+            <span class="timeline-item__date">2024</span>
+            <div class="timeline-item__card">
+              <p class="timeline-item__type">📜 Certificación</p>
+              <h3 class="timeline-item__title">Linux — Administración de Sistemas</h3>
+              <p class="timeline-item__subtitle">Curso online</p>
+              <p class="timeline-item__description">
+                Comandos esenciales, scripting Bash, gestión de procesos,
+                permisos y administración del sistema de archivos.
+              </p>
+            </div>
+          </div>
+
+          <!-- ── Certificación 3 — Agrega más aquí ── -->
+          <div class="timeline-item" role="listitem">
+            <span class="timeline-item__date">2023</span>
+            <div class="timeline-item__card">
+              <p class="timeline-item__type">📜 Certificación</p>
+              <h3 class="timeline-item__title">Git &amp; GitHub — Control de Versiones</h3>
+              <p class="timeline-item__subtitle">Curso online</p>
+              <p class="timeline-item__description">
+                Flujo de trabajo con Git: ramas, merges, pull requests
+                y colaboración en proyectos open source.
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /timeline -->
+
+      </div>
+    </section>
+    <!-- ─── FIN EDUCATION ─── -->
+
+
+    <!-- ─────────────────────────────────────────────────
+        📬 CONTACT SECTION — Contacto
+      ────────────────────────────────────────────────── -->
+    <section class="section contact" id="contact" aria-label="Contacto">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">// contact.init()</span>
+          <h2 class="section-title">Contacto</h2>
+          <p class="section-subtitle">
+            ¿Tienes un proyecto en mente? Hablemos
+          </p>
+        </div>
+
+        <div class="contact__grid">
+
+          <!-- ── Columna: links de redes sociales ── -->
+          <div>
+            <h3 class="contact__info-title">¿Hablamos?</h3>
+            <p class="contact__info-text">
+              Estoy disponible para oportunidades laborales,
+              proyectos freelance o simplemente para conectar.
+              Escríbeme por cualquier canal.
+            </p>
+
+            <ul class="contact__links" aria-label="Redes sociales y contacto">
+
+              <li>
+                <a href="mailto:tuemail@gmail.com" class="contact__link-item" id="link-email"
+                  aria-label="Enviar correo">
+                  <span class="contact__link-icon" aria-hidden="true">📧</span>
+                  <div class="contact__link-info">
+                    <span class="contact__link-label">Email</span>
+                    <span class="contact__link-value">tuemail@gmail.com</span>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer"
+                  class="contact__link-item" id="link-linkedin" aria-label="Ver perfil en LinkedIn">
+                  <span class="contact__link-icon" aria-hidden="true">💼</span>
+                  <div class="contact__link-info">
+                    <span class="contact__link-label">LinkedIn</span>
+                    <span class="contact__link-value">linkedin.com/in/tu-usuario</span>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://github.com/JuanDavidGuzman" target="_blank" rel="noopener noreferrer"
+                  class="contact__link-item" id="link-github" aria-label="Ver perfil en GitHub">
+                  <span class="contact__link-icon" aria-hidden="true">🐙</span>
+                  <div class="contact__link-info">
+                    <span class="contact__link-label">GitHub</span>
+                    <span class="contact__link-value">github.com/JuanDavidGuzman</span>
+                  </div>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- ── Columna: formulario de contacto ── -->
+          <form class="contact__form" id="contact-form" novalidate>
+
+            <div class="form-group">
+              <label class="form-label" for="form-name">// nombre</label>
+              <input type="text" id="form-name" name="name" class="form-input" placeholder="Tu nombre completo" required
+                autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="form-email">// email</label>
+              <input type="email" id="form-email" name="email" class="form-input" placeholder="tucorreo@email.com"
+                required autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="form-message">// mensaje</label>
+              <textarea id="form-message" name="message" class="form-textarea"
+                placeholder="Cuéntame sobre tu proyecto o idea..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit" id="btn-send">
+              Enviar mensaje
+            </button>
+
+            <p class="form-note">* Respondo en menos de 24 horas.</p>
+
+          </form>
+
+        </div><!-- /contact__grid -->
+
+      </div>
+    </section>
+    <!-- ─── FIN CONTACT ─── -->
 
   </main>
 
 
   <!-- =====================================================
-      FOOTER — Fase 6
+      🦶 FOOTER
     ====================================================== -->
-  <footer id="footer">
-    <!-- Lo construimos en Fase 6 -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <!-- Copyright -->
+        <p class="footer__copy">
+          © 2025 — Desarrollado por <span>Juan David Guzmán</span>
+        </p>
+
+        <!-- Links rápidos -->
+        <ul class="footer__links" role="list">
+          <li><a href="#about" class="footer__link">Sobre mí</a></li>
+          <li><a href="#projects" class="footer__link">Proyectos</a></li>
+          <li><a href="#contact" class="footer__link">Contacto</a></li>
+        </ul>
+
+      </div>
+    </div>
   </footer>
 
 
